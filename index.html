@@ -1,1 +1,197 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Y2K Phantom Protocol --><!-- Application Structure Plan: The application is designed as a single, static invitation presented within a retro computer window. This structure was chosen to fully immerse the user in the Y2K/GeoCities theme from the source document. A linear, top-to-bottom information flow is most effective for a simple invitation, ensuring all key details are presented clearly without the need for navigation or complex interactions. The aesthetic itself is the primary user experience, prioritizing thematic accuracy and visual engagement. --><!-- Visualization & Content Choices: The design brief is translated directly into web elements. Goal: Present party info in a Y2Small style. Method: Use a fixed layout styled as a retro UI window. Interaction: CSS animations (glow, glitch, marquee) enhance the theme. Justification: This approach directly implements the source document's vision. Colors are mapped to Tailwind/CSS variables. Typography uses Google Fonts to match the 'Arcade' and 'Digital' feel. Text effects like 'Chrome' and 'Glow' are achieved with CSS gradients and text-shadows. Icons are Unicode characters, avoiding external files. --><!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --><title> YOU ARE INVITED // HEY YOU BASIC WITCHES</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <!-- Updated Google Font import to include Bruno Ace SC and remove Orbitron --><link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Creepster&family=Geo&family=Iceland&family=Nabla&family=Sixtyfour&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-black: #1A1A1A;
+            --neon-slime: #32FF00;
+            --chrome-silver: #E0E0E0;
+            --electric-violet: #A855F7;
+            --hot-pink-glitch: #FF0099;
+        }
+        body {
+            background-color: var(--cyber-black);
+            font-family: 'Iceland', sans-serif; /* Changed body font */
+            background-image:
+                linear-gradient(var(--electric-violet) 1px, transparent 1px),
+                linear-gradient(to right, var(--electric-violet) 1px, var(--cyber-black) 1px);
+            background-size: 20px 20px;
+            animation: background-pan 15s linear infinite; /* Animation re-enabled */
+        }
+        @keyframes background-pan { /* Animation re-enabled */
+            from { background-position: 0 0; }
+            to { background-position: -200px -200px; }
+        }
+        .font-header { font-family: 'Nabla', system-ui; }
+        .font-spooky { font-family: 'Creepster', cursive; } /* Spooky font */
+        .font-digital { font-family: 'Bruno Ace SC', sans-serif; } /* Digital font changed to Bruno Ace SC */
+        .y2k-window {
+            border: 2px solid var(--chrome-silver);
+            /* Increased the shadow values */
+            box-shadow: inset 0 0 0 2px var(--cyber-black), 8px 8px 0px var(--hot-pink-glitch);
+        }
+        .title-bar {
+            font-family: 'Iceland', sans-serif; /* Matched title bar font to body */
+            background: linear-gradient(to right, var(--electric-violet), var(--hot-pink-glitch));
+            color: var(--chrome-silver);
+        }
+        /* Nabla font has its own color, so chrome-text is not needed for it */
+        .chrome-text {
+            background: linear-gradient(180deg, #ffffff 0%, #d1d1d1 50%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(2px 2px #000);
+        }
+        .neon-glow {
+            color: var(--neon-slime);
+            font-family: 'Geo', sans-serif; /* Changed font */
+            /* Reduced the shadow/glow effect */
+            text-shadow:
+                0 0 3px var(--neon-slime),
+                0 0 8px var(--neon-slime),
+                0 0 12px #fff,
+                0 0 16px var(--neon-slime);
+        }
+        .glitch-effect { /* Animation re-enabled */
+            position: relative;
+            animation: glitch 5s infinite steps(1);
+        }
+        .glitch-effect::before,
+        .glitch-effect::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cyber-black);
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+        .glitch-effect::before {
+            left: -2px;
+            text-shadow: 2px 0 var(--hot-pink-glitch);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch-effect::after {
+            left: 2px;
+            text-shadow: -2px 0 var(--electric-violet);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            1.5% { transform: translate(2px, -3px) skewX(20deg); }
+            2% { transform: none; }
+            48.5% { transform: none; }
+            49% { transform: translate(-2px, 3px) skewX(-15deg); }
+            50% { transform: none; }
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            10% { clip: rect(17px, 9999px, 91px, 0); }
+            20% { clip: rect(80px, 9999px, 120px, 0); }
+            30% { clip: rect(30px, 9999px, 50px, 0); }
+            40% { clip: rect(25px, 9999px, 62px, 0); }
+            50% { clip: rect(50px, 9999px, 148px, 0); }
+            60% { clip: rect(70px, 9999px, 80px, 0); }
+            70% { clip: rect(100px, 9999px, 130px, 0); }
+            80% { clip: rect(20px, 9999px, 35px, 0); }
+            90% { clip: rect(110px, 9999px, 140px, 0); }
+            100% { clip: rect(1px, 9999px, 10px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(2px, 9999px, 10px, 0); }
+            10% { clip: rect(95px, 9999px, 110px, 0); }
+            20% { clip: rect(40px, 9999px, 55px, 0); }
+            30% { clip: rect(120px, 9999px, 135px, 0); }
+            40% { clip: rect(85px, 9999px, 100px, 0); }
+            50% { clip: rect(25px, 9999px, 40px, 0); }
+            60% { clip: rect(60px, 9999px, 75px, 0); }
+            70% { clip: rect(10px, 9999px, 25px, 0); }
+            80% { clip: rect(70px, 9999px, 85px, 0); }
+            90% { clip: rect(130px, 9999px, 145px, 0); }
+            100% { clip: rect(45px, 9999px, 60px, 0); }
+        }
+        .marquee-container {
+            margin-left: -24px;
+            margin-right: -24px;
+            width: calc(100% + 48px);
+            overflow: hidden;
+        }
+        .marquee {
+            width: 100%;
+            background-color: var(--electric-violet);
+            color: var(--cyber-black);
+            white-space: nowrap;
+            box-shadow: inset 0 0 5px #000;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 12s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 flex items-center justify-center min-h-screen">
+    <!-- Changed max-w-2xl to max-w-3xl --><main class="y2k-window w-full max-w-3xl bg-black/80 backdrop-blur-sm text-[var(--chrome-silver)]">
+        <div class="title-bar h-8 flex items-center justify-between p-2 text-sm">
+            <span>2NITE IS THE NIGHT.exe</span>
+            <div class="flex items-center space-x-2">
+                <span class="w-4 h-4 border-2 border-chrome-silver flex items-center justify-center font-sans">_</span>
+                <span class="w-4 h-4 border-2 border-chrome-silver flex items-center justify-center font-sans">□</span>
+                <span class="w-4 h-4 border-2 border-chrome-silver bg-hot-pink-glitch flex items-center justify-center font-sans">X</span>
+            </div>
+        </div>
+        <div class="p-6 text-center text-lg sm:text-xl md:text-2xl">
+            <!-- Text changed back, <br> removed, glitch-effect re-enabled --><h1 class="font-header text-4xl sm:text-5xl md:text-6xl mb-4 glitch-effect" data-text="HEY YOU BASIC WITCHES">HEY YOU BASIC WITCHES</h1>
+            
+            <div class="marquee-container">
+                <div class="marquee font-digital text-xl my-4 py-1">
+                    <span>*** GHOULS JUST WANNA HAVE FUN *** HIGH RES HITS & LOW RES HORRORS ***</span>
+                </div>
+            </div>
+            
+            <!-- Removed marquee-container and its content --><!-- Reduced space-y from 10 to 6 --><div class="space-y-6 text-left p-4 border-2 border-[var(--electric-violet)] bg-black/50">
+                <div>
+                    <p class="neon-glow text-3xl">IT'S A PARTY!</p>
+                    <!-- Reduced line height and spacing, changed text-3xl to text-2xl --><div class="text-2xl text-white leading-tight mt-1 space-y-2">
+                        <p>Make our place your Halloween HQ this year. We'll fuel up with snacks, drinks and even some chili if the weather dips low enough. Around 5:30 kids (and some brave adults) will head out to collect the haul. We’re a block off of Hill Drive, where the candy is legendary. Go get those treats! The rest of us will hold down the fort, pass out sweets and keep an eye out for mischief-makers.</p>
+                    </div>
+                </div>
+                <div>
+                    <p><strong class="neon-glow text-3xl">HOSTS:</strong></p>
+                    <!-- Reduced line height, changed text-3xl to text-2xl --><p class="text-white text-2xl leading-tight">Maxine, Stella, Claire & Kyle</p>
+                </div>
+                <div>
+                    <!-- Text Changed back --><p class="neon-glow text-3xl">THE DETAILS:</p>
+                    <!-- Removed link, reduced line height and spacing, changed text-3xl to text-2xl --><ul class="list-none mt-1 space-y-1 text-2xl leading-tight">
+                        <li><span class="text-white">OCT 31 @ or around 4:30</span></li>
+                        <li>
+                            <span class="text-white">5143 Argus Drive</span>
+                        </li>
+                    </ul>
+                </div>
+
+                 <!-- animate-pulse class re-enabled --><p class="pt-3 text-center text-[var(--hot-pink-glitch)] text-xl font-digital animate-pulse">LET US KNOW IF YOU CAN COME</p>
+            </div>
+            
+            <div class="mt-8 text-xl text-[var(--chrome-silver)]">
+                <p>&lt; / &gt;  😈 😈 😈  &lt; / &gt;</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
