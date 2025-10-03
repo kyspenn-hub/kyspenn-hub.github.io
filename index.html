@@ -146,13 +146,8 @@
 </head>
 <body class="p-4 sm:p-8 flex items-center justify-center min-h-screen">
     <!-- Changed max-w-2xl to max-w-3xl --><main class="y2k-window w-full max-w-3xl bg-black/80 backdrop-blur-sm text-[var(--chrome-silver)]">
-        <div class="title-bar h-8 flex items-center justify-between p-2 text-sm">
+        <div class="title-bar h-8 flex items-center p-2 text-sm">
             <span>2NITE IS THE NIGHT.exe</span>
-            <div class="flex items-center space-x-2">
-                <span class="w-4 h-4 border-2 border-chrome-silver flex items-center justify-center font-sans">_</span>
-                <span class="w-4 h-4 border-2 border-chrome-silver flex items-center justify-center font-sans">□</span>
-                <span class="w-4 h-4 border-2 border-chrome-silver bg-hot-pink-glitch flex items-center justify-center font-sans">X</span>
-            </div>
         </div>
         <div class="p-6 text-center text-lg sm:text-xl md:text-2xl">
             <!-- Text changed back, <br> removed, glitch-effect re-enabled --><h1 class="font-header text-4xl sm:text-5xl md:text-6xl mb-4 glitch-effect" data-text="HEY YOU BASIC WITCHES">HEY YOU BASIC WITCHES</h1>
@@ -165,7 +160,7 @@
             
             <!-- Removed marquee-container and its content --><!-- Reduced space-y from 10 to 6 --><div class="space-y-6 text-left p-4 border-2 border-[var(--electric-violet)] bg-black/50">
                 <div>
-                    <p class="neon-glow text-3xl">IT'S A PARTY!</p>
+                    <p class="neon-glow text-3xl">SWING BY</p>
                     <!-- Reduced line height and spacing, changed text-3xl to text-2xl --><div class="text-2xl text-white leading-tight mt-1 space-y-2">
                         <p>Make our place your Halloween HQ this year. We'll fuel up with snacks, drinks and even some chili if the weather dips low enough. Around 5:30 kids (and some brave adults) will head out to collect the haul. We’re a block off of Hill Drive, where the candy is legendary. Go get those treats! The rest of us will hold down the fort, pass out sweets and keep an eye out for mischief-makers.</p>
                     </div>
@@ -175,11 +170,16 @@
                     <!-- Reduced line height, changed text-3xl to text-2xl --><p class="text-white text-2xl leading-tight">Maxine, Stella, Claire & Kyle</p>
                 </div>
                 <div>
-                    <!-- Text Changed back --><p class="neon-glow text-3xl">THE DETAILS:</p>
+                    <!-- Typo 'classE' fixed to 'class' --><p class="neon-glow text-3xl">THE DETAILS:</p>
                     <!-- Removed link, reduced line height and spacing, changed text-3xl to text-2xl --><ul class="list-none mt-1 space-y-1 text-2xl leading-tight">
                         <li><span class="text-white">OCT 31 @ or around 4:30</span></li>
-                        <li>
-                            <span class="text-white">5143 Argus Drive</span>
+                        <!-- Added flex container to align address and calendar button --><li class="flex justify-between items-center">
+                            <a href="httpsm://www.google.com/maps/search/?api=1&query=5143+Argus+Drive,+Los+Angeles,+CA+90041" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[var(--hot-pink-glitch)] underline">
+                                5143 Argus Drive
+                            </a>
+                            <!-- Replaced Google image with themed button, updated href --><a href="https://calendar.app.google/DGK8uHD2bFa6hDX9A" target="_blank" rel="noopener noreferrer" class="font-digital text-base text-cyber-black bg-[var(--hot-pink-glitch)] px-2 py-0 border-2 border-chrome-silver hover:bg-neon-slime hover:border-neon-slime no-underline">
+                                add to my calendar
+                            </a>
                         </li>
                     </ul>
                 </div>
